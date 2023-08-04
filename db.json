@@ -1,0 +1,23 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Cheerful Loving Couple Bakers Drinking Coffee",
+      "description": "It’s no secret that the digital industry is booming. From exciting startups to global brands, companies are reaching out to digital agencies, responding to the new possibilities available. However, the industry is fast becoming overcrowded, heaving …",
+      "img_url": "https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/cheerful-loving-couple-bakers-drinking-coffee-PCAVA6B-2-267x205.jpg",
+      "user_id": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Pervin Pashazade",
+      "username": "pervinpashazade"
+    },
+    {
+      "id": 2,
+      "fullname": "Yasemen Memmedli",
+      "username": "yasemen"
+    }
+  ]
+}
