@@ -1,26 +1,39 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Container } from 'reactstrap'
+import { Button, Container, Row } from 'reactstrap'
+import { ThemeContext } from '../../context/ThemeContext'
 
 function Header() {
 
-    const isAuth = true
+    const {
+        theme,
+        toggleTheme
+    } = useContext(ThemeContext)
 
     return (
         <div className='py-3'>
             <Container>
-                <Link
-                    to="/admin"
-                    className={`btn btn-primary ${isAuth ? "true" : "false"}`}
-                >
-                    Blog əlavə et
-                </Link>
-                {/* <Link
-                 to="/login"
-                 className='btn btn-outline-primary'
-                >
-                    Login
-                </Link> */}
+                <Row>
+                    <div className="col-md-6">
+                        <Link
+                            to="/admin"
+                            className={`btn btn-primary mb-4`}
+                        >
+                            Blog əlavə et
+                        </Link>
+                    </div>
+                    <div className="col-md-6">
+                        <Button
+                            color={theme === "dark" ?
+                                "light" : "secondary"
+                            }
+                            className='mb-4'
+                            onClick={() => toggleTheme()}
+                        >
+                            Change Theme
+                        </Button>
+                    </div>
+                </Row>
             </Container>
         </div>
     )

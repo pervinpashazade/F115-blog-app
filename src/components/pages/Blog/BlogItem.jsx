@@ -1,20 +1,24 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Alert, Container } from 'reactstrap'
 import { apiUrl } from '../../../config'
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../../Lib/Loader'
 import { errorMessages } from '../../../utils/renderMessage'
+import { ThemeContext } from '../../../context/ThemeContext'
 
 function BlogItem() {
 
     const { id } = useParams()
+
+    const { age, setAge } = useContext(ThemeContext)
 
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getData()
+        setAge(prevState => prevState + 1)
     }, [])
 
     const getData = () => {

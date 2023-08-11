@@ -1,3 +1,7 @@
+body.dark {
+    background: #787272;
+}
+
 .blog-card {
     display: grid;
     grid-template-columns: 195px auto;
