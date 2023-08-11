@@ -10,6 +10,7 @@ import Select from 'react-select'
 import axios from 'axios'
 import { apiUrl } from '../../../config'
 import { errorMessages } from '../../../utils/renderMessage'
+import { checkIsValidUrl } from '../../../utils/regex'
 
 function BlogCreate() {
 
@@ -36,6 +37,8 @@ function BlogCreate() {
         }
         if (!data.img_url) {
             errors.img_url = errorMessages.required("Image url")
+        } else if (!checkIsValidUrl(data.img_url)) {
+            errors.img_url = errorMessages.invalidType("Image url", "URL")
         }
         if (!data.description) {
             errors.description = errorMessages.required("Description")
@@ -60,7 +63,6 @@ function BlogCreate() {
         // console.log("errors", Object.values(errors).filter(string => string));
 
         if (Object.values(errors).filter(string => string).length) {
-            alert("ERROR VAR!")
             return
         }
 

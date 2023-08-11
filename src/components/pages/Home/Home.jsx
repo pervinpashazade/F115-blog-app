@@ -4,6 +4,7 @@ import BlogCard from '../../Lib/Blog/BlogCard'
 import axios from 'axios'
 import { apiUrl } from '../../../config'
 import Header from '../../Layout/Header'
+import Loader from '../../Lib/Loader'
 
 function Home() {
 
@@ -49,11 +50,7 @@ function Home() {
                             </Row>
                         </Container>
                         :
-                        <div className="text-center">
-                            <Spinner>
-                                Loading...
-                            </Spinner>
-                        </div>
+                        <Loader />
                 }
 
             </div>
